@@ -1,0 +1,11 @@
+# Ophiuchus-Konfiguration (13. Sternzeichen)
+# Grenzen in siderischen ekliptischen Graden
+
+start: 244.0
+end: 266.3
+element: "Feuer-Wasser"
+
+dekan:
+  gott: "Asklepios"
+  titel: "Der Heiler der Schlangen"
+  werkzeug: "Äskulapstab"

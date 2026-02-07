@@ -1,0 +1,29 @@
+# SyncMaster Design-System
+# Farben, Fonts, Abstände für PDF und Frontend
+
+colors:
+  background: "#0A0F14"
+  gold: "#C9A961"
+  gold_light: "#D4B87A"
+  text_primary: "#FFFFFF"
+  text_secondary: "#B0B0B0"
+  accent_teal: "#1A5F7A"
+  divider: "#2A2A2A"
+  table_header: "#1A1F25"
+  table_row_alt: "#0D1218"
+
+fonts:
+  title_size: 28
+  subtitle_size: 20
+  heading_size: 16
+  body_size: 11
+  small_size: 9
+  family: "Helvetica"
+
+layout:
+  page_size: "A4"
+  margin_top: 60
+  margin_bottom: 60
+  margin_left: 50
+  margin_right: 50
+  line_spacing: 14

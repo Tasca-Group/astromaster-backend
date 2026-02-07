@@ -1,0 +1,8 @@
+# Ayanamsa-Einstellungen für siderische Berechnungen
+# Der exakte Wert wird dynamisch von swisseph berechnet.
+
+standard: "lahiri"
+
+# Fallback nur für den Fall, dass swisseph nicht verfügbar ist.
+# NICHT für reguläre Berechnungen verwenden!
+fallback_wert: 24.17

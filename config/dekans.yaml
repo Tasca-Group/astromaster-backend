@@ -1,0 +1,144 @@
+# Ägyptische Dekane — 36 Standard-Dekane + 1 Ophiuchus-Dekan = 37
+# Jedes der 12 klassischen Zeichen hat 3 Dekane (à 10°).
+# Ophiuchus hat einen Sonder-Dekan: Asklepios.
+#
+# Dekan 1: 0°–10° im Zeichen
+# Dekan 2: 10°–20° im Zeichen
+# Dekan 3: 20°–30° im Zeichen
+
+widder:
+  - gott: "Chons"
+    titel: "Der Mondwanderer"
+    werkzeug: "Mondsichel"
+  - gott: "Hathor"
+    titel: "Herrin der Sterne"
+    werkzeug: "Sistrum"
+  - gott: "Sachmet"
+    titel: "Die Mächtige"
+    werkzeug: "Sonnenscheibe"
+
+stier:
+  - gott: "Ptah"
+    titel: "Der Weltenbauer"
+    werkzeug: "Szepter des Lebens"
+  - gott: "Min"
+    titel: "Herr der Fruchtbarkeit"
+    werkzeug: "Flail"
+  - gott: "Apis"
+    titel: "Der Heilige Stier"
+    werkzeug: "Sonnenscheibe"
+
+zwillinge:
+  - gott: "Thoth"
+    titel: "Herr der Weisheit"
+    werkzeug: "Schreibtafel"
+  - gott: "Schu"
+    titel: "Herr der Luft"
+    werkzeug: "Feder der Maat"
+  - gott: "Tefnut"
+    titel: "Herrin des Taus"
+    werkzeug: "Löwenmaske"
+
+krebs:
+  - gott: "Chepri"
+    titel: "Der Werdende"
+    werkzeug: "Skarabäus"
+  - gott: "Anubis"
+    titel: "Hüter der Schwelle"
+    werkzeug: "Waage der Seelen"
+  - gott: "Selket"
+    titel: "Die Atemspenderin"
+    werkzeug: "Skorpionkrone"
+
+loewe:
+  - gott: "Ra"
+    titel: "Der Sonnenkönig"
+    werkzeug: "Sonnenbarke"
+  - gott: "Atum"
+    titel: "Der Vollender"
+    werkzeug: "Doppelkrone"
+  - gott: "Horus"
+    titel: "Der Himmelsfalkner"
+    werkzeug: "Auge des Horus"
+
+jungfrau:
+  - gott: "Isis"
+    titel: "Die Große Mutter"
+    werkzeug: "Thronzeichen"
+  - gott: "Nephtys"
+    titel: "Herrin des Hauses"
+    werkzeug: "Tempelkorb"
+  - gott: "Maat"
+    titel: "Die Ordnung"
+    werkzeug: "Feder der Wahrheit"
+
+waage:
+  - gott: "Schu"
+    titel: "Der Gleichgewichtshüter"
+    werkzeug: "Himmelsstütze"
+  - gott: "Nut"
+    titel: "Die Himmelsmutter"
+    werkzeug: "Sternenbogen"
+  - gott: "Geb"
+    titel: "Der Erdvater"
+    werkzeug: "Erdschlange"
+
+skorpion:
+  - gott: "Set"
+    titel: "Herr des Chaos"
+    werkzeug: "Was-Szepter"
+  - gott: "Sobek"
+    titel: "Der Krokodilgott"
+    werkzeug: "Ankh"
+  - gott: "Serapis"
+    titel: "Der Verwandler"
+    werkzeug: "Modius"
+
+schuetze:
+  - gott: "Nechbet"
+    titel: "Die Geiergöttin"
+    werkzeug: "Weiße Krone"
+  - gott: "Wadjet"
+    titel: "Das Flammenauge"
+    werkzeug: "Uräus"
+  - gott: "Bastet"
+    titel: "Die Sanftmütige"
+    werkzeug: "Sistrum"
+
+steinbock:
+  - gott: "Chnum"
+    titel: "Der Töpfer"
+    werkzeug: "Töpferscheibe"
+  - gott: "Amun"
+    titel: "Der Verborgene"
+    werkzeug: "Widderkrone"
+  - gott: "Mut"
+    titel: "Die Weltenmutter"
+    werkzeug: "Doppelkrone"
+
+wassermann:
+  - gott: "Hapi"
+    titel: "Herr der Flut"
+    werkzeug: "Wasserkrüge"
+  - gott: "Anuket"
+    titel: "Herrin des Nils"
+    werkzeug: "Federkrone"
+  - gott: "Satis"
+    titel: "Die Bogenschützin"
+    werkzeug: "Weißkronenbogen"
+
+fische:
+  - gott: "Nun"
+    titel: "Das Urgewässer"
+    werkzeug: "Lotusblüte"
+  - gott: "Mehet-Weret"
+    titel: "Die Große Flut"
+    werkzeug: "Himmelskuh"
+  - gott: "Renenutet"
+    titel: "Die Nährende Schlange"
+    werkzeug: "Kobra-Diadem"
+
+ophiuchus:
+  - gott: "Asklepios"
+    titel: "Der Heiler der Schlangen"
+    werkzeug: "Äskulapstab"
