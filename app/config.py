@@ -1,5 +1,7 @@
 """AstroMaster Backend — Konfiguration via Umgebungsvariablen."""
 
+import json
+from pydantic import field_validator
 from pydantic_settings import BaseSettings
 
 
@@ -16,7 +18,7 @@ class Settings(BaseSettings):
     # Brevo (Email)
     BREVO_API_KEY: str = ""
 
-    # CORS
+    # CORS — accepts JSON array or comma-separated string
     CORS_ORIGINS: list[str] = [
         "https://astro-masters.com",
         "https://www.astro-masters.com",
@@ -28,6 +30,16 @@ class Settings(BaseSettings):
     # App
     APP_VERSION: str = "1.0.0"
     DEBUG: bool = False
+
+    @field_validator("CORS_ORIGINS", mode="before")
+    @classmethod
+    def parse_cors_origins(cls, v):
+        if isinstance(v, str):
+            v = v.strip()
+            if v.startswith("["):
+                return json.loads(v)
+            return [s.strip() for s in v.split(",") if s.strip()]
+        return v
 
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 
