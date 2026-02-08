@@ -96,6 +96,19 @@ def create_bestellung(
     return BestellungCreateResponse(id=bestellung.id, status="neu")
 
 
+@router.get("/api/bestellung/by-session/{session_id}")
+def get_bestellung_by_session(session_id: str, db: Session = Depends(get_db)):
+    """Bestellung anhand der Stripe Session-ID finden."""
+    bestellung = (
+        db.query(Bestellung)
+        .filter(Bestellung.stripe_session_id == session_id)
+        .first()
+    )
+    if not bestellung:
+        raise HTTPException(status_code=404, detail="Bestellung nicht gefunden")
+    return {"id": str(bestellung.id), "status": bestellung.status}
+
+
 @router.get("/api/bestellung/{bestellung_id}/status", response_model=BestellungStatusResponse)
 def get_bestellung_status(bestellung_id: str, db: Session = Depends(get_db)):
     """Status einer Bestellung abfragen (für Kunden-Statusseite)."""
