@@ -1,7 +1,7 @@
 """AstroMaster Backend — Konfiguration via Umgebungsvariablen."""
 
 import json
-from pydantic import field_validator
+from pydantic import computed_field
 from pydantic_settings import BaseSettings
 
 
@@ -18,11 +18,8 @@ class Settings(BaseSettings):
     # Brevo (Email)
     BREVO_API_KEY: str = ""
 
-    # CORS — accepts JSON array or comma-separated string
-    CORS_ORIGINS: list[str] = [
-        "https://astro-masters.com",
-        "https://www.astro-masters.com",
-    ]
+    # CORS — stored as comma-separated string, accessed as list via property
+    CORS_ORIGINS: str = "https://astro-masters.com,https://www.astro-masters.com"
 
     # PDF Output
     PDF_OUTPUT_DIR: str = "./output"
@@ -31,15 +28,13 @@ class Settings(BaseSettings):
     APP_VERSION: str = "1.0.0"
     DEBUG: bool = False
 
-    @field_validator("CORS_ORIGINS", mode="before")
-    @classmethod
-    def parse_cors_origins(cls, v):
-        if isinstance(v, str):
-            v = v.strip()
-            if v.startswith("["):
-                return json.loads(v)
-            return [s.strip() for s in v.split(",") if s.strip()]
-        return v
+    @computed_field
+    @property
+    def cors_origins_list(self) -> list[str]:
+        v = self.CORS_ORIGINS.strip()
+        if v.startswith("["):
+            return json.loads(v)
+        return [s.strip() for s in v.split(",") if s.strip()]
 
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 
