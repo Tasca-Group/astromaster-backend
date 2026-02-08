@@ -10,7 +10,7 @@ from slowapi.errors import RateLimitExceeded
 from app.config import settings
 from app.database import Base, engine
 from app.dependencies import limiter
-from app.routers import admin, bestellung, gratis_check, health, stripe_webhook
+from app.routers import admin, bestellung, checkout, gratis_check, health, stripe_webhook
 
 # Logging
 logging.basicConfig(
@@ -44,6 +44,7 @@ app.add_middleware(
 app.include_router(health.router)
 app.include_router(gratis_check.router)
 app.include_router(bestellung.router)
+app.include_router(checkout.router)
 app.include_router(stripe_webhook.router)
 app.include_router(admin.router)
 

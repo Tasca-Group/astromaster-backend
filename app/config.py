@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     ADMIN_API_KEY: str = "change-me-in-production"
 
     # Stripe
+    STRIPE_SECRET_KEY: str = ""
     STRIPE_WEBHOOK_SECRET: str = ""
 
     # Brevo (Email)
