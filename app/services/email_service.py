@@ -43,13 +43,13 @@ def send_pdf_email(email: str, name: str, pdf_path: Path) -> bool:
             <body style="font-family: Arial, sans-serif; background: #0A0F14; color: #E8E8E8; padding: 40px;">
                 <div style="max-width: 600px; margin: 0 auto;">
                     <h1 style="color: #C9A961;">Hallo {name},</h1>
-                    <p>deine persoenliche kosmische Analyse ist fertig!</p>
+                    <p>deine persönliche kosmische Analyse ist fertig!</p>
                     <p>Im Anhang findest du deine PDF mit allen Ergebnissen:</p>
                     <ul>
                         <li>Siderische Astrologie (Lahiri-Ayanamsa)</li>
                         <li>System-Check: Tropisch vs. Siderisch</li>
                         <li>Numerologie & Lebenszahl</li>
-                        <li>Aegyptische Dekane</li>
+                        <li>Ägyptische Dekane</li>
                         <li>Human Design Typ</li>
                     </ul>
                     <p style="color: #C9A961;">Viel Freude beim Entdecken!</p>
