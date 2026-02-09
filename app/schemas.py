@@ -8,8 +8,16 @@ from pydantic import BaseModel, EmailStr, field_validator
 
 # ─── Gratis-Check ───
 
+class ZeichenVergleich(BaseModel):
+    tropisch: str
+    siderisch: str
+    abweichung: bool
+
+
 class GratisCheckRequest(BaseModel):
     geburtsdatum: str  # DD.MM.YYYY
+    geburtszeit: str | None = None  # HH:MM (optional)
+    geburtsort: str | None = None  # (optional)
 
     @field_validator("geburtsdatum")
     @classmethod
@@ -22,12 +30,31 @@ class GratisCheckRequest(BaseModel):
             raise ValueError("Ungültiges Datum")
         return v
 
+    @field_validator("geburtszeit")
+    @classmethod
+    def validate_zeit(cls, v: str | None) -> str | None:
+        if v is None:
+            return v
+        parts = v.split(":")
+        if len(parts) != 2 or not parts[0].isdigit() or not parts[1].isdigit():
+            raise ValueError("Format muss HH:MM sein")
+        h, m = int(parts[0]), int(parts[1])
+        if not (0 <= h <= 23 and 0 <= m <= 59):
+            raise ValueError("Ungültige Uhrzeit")
+        return v
+
 
 class GratisCheckResponse(BaseModel):
+    # Backward compat (sun only)
     tropisch: str
     siderisch: str
     abweichung: bool
     ophiuchus: bool
+    # Extended
+    sonne: ZeichenVergleich
+    mond: ZeichenVergleich
+    aszendent: ZeichenVergleich | None = None
+    hat_uhrzeit: bool = False
 
 
 # ─── Bestellung ───

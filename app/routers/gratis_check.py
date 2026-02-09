@@ -24,7 +24,7 @@ def do_gratis_check(
     Keine Auth, Rate-Limit 30/min/IP.
     """
     try:
-        result = gratis_check(data.geburtsdatum)
+        result = gratis_check(data.geburtsdatum, data.geburtszeit, data.geburtsort)
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Berechnung fehlgeschlagen: {e}")
 
